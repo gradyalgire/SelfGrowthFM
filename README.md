@@ -1,2 +1,2 @@
-# selfgrowth.fm
+# SelfGrowth.fm
 A minimalist website and playlist focused on using music intentionally to support emotional growth, grounding, and self-rebuilding.
