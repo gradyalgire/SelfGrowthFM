@@ -19,7 +19,7 @@ function safeUrl(url) {
 
 export function initSwipers() {
     // Podcasts — up to 2 slides per view
-    new Swiper('.podcasts .media-wrapper', {
+    new Swiper('.podcasts .swiper', {
         loop: true,
         spaceBetween: 30,
         slidesPerView: 2,
@@ -39,7 +39,7 @@ export function initSwipers() {
     });
 
     // Books — up to 3 slides per view
-    new Swiper('.books .media-wrapper', {
+    new Swiper('.books .swiper', {
         loop: true,
         spaceBetween: 30,
         slidesPerView: 2,
@@ -60,7 +60,7 @@ export function initSwipers() {
     });
 
     // Videos — up to 2 slides per view
-    new Swiper('.videos .media-wrapper', {
+    new Swiper('.videos .swiper', {
         loop: true,
         spaceBetween: 30,
         slidesPerView: 2,
@@ -80,7 +80,7 @@ export function initSwipers() {
     });
 
     // Movies — up to 2 slides per view
-    new Swiper('.movies .media-wrapper', {
+    new Swiper('.movies .swiper', {
         loop: true,
         spaceBetween: 30,
         slidesPerView: 1,
@@ -110,11 +110,11 @@ function generateMediaSliderCard(mediatype, media) {
                 <a href="${safeUrl(m.media_url)}" target="_blank"><img src="${safeUrl(m.image_url)}" alt="${sanitize(m.title)} ${sanitize(m.type)}" class="media-image"></a>
                 <div class="media-item-content">
                     <div class="media-title-host">
-                        <h2 class="media-title">${sanitize(m.title)}</h2>
+                        <h3 class="media-title">${sanitize(m.title)}</h3>
                         <h4 class="media-host">${sanitize(m.creator)}</h4>
                     </div>
                     <p class="media-description">${sanitize(m.description)}</p>
-                    ${m.triggers?.length ? `<p class="media-triggers"><strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}</p>` : `<a href="/recommendations/recommendations?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
+                    ${m.triggers?.length ? `<p class="media-triggers"><strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}</p>` : `<a href="/recommendations/?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
                 </div>
             </div>
         </li>
@@ -130,11 +130,11 @@ function generateMediaSliderVideo(mediatype, media) {
                 <iframe width="359" height="197" src="${safeUrl(m.media_link)}" title="${sanitize(m.title)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="media-item-content">
                     <div class="media-title-creator">
-                        <h2 class="media-title">${sanitize(m.title)}</h2>
+                        <h3 class="media-title">${sanitize(m.title)}</h3>
                         <h4 class="media-creator">${sanitize(m.creator)}</h4>
                     </div>
                     <p class="media-description">${sanitize(m.description)}</p>
-                    ${m.triggers?.length ? `<p class="media-triggers"><strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}</p>` : `<a href="recommendations.html?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
+                    ${m.triggers?.length ? `<p class="media-triggers"><strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}</p>` : `<a href="/recommendations/?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
                 </div>
             </div>
         </li>

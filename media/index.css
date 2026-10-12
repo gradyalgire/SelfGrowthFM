@@ -1,0 +1,252 @@
+@import url("../main.css");
+
+/*************** GLOBAL VARIABLES ***************/
+:root {
+    /******** BACKGROUND ********/
+    --bg-media-card: #ffffff;
+
+    /********** SWIPER **********/
+    --swiper-theme-color: var(--text-primary);
+    --swiper-navigation-size: 1.5rem;
+    --swiper-pagination-bullet-size: .5rem;
+    --swiper-pagination-bullet-inactive-color: var(--text-secondary);
+    --swiper-pagination-bullet-inactive-opacity: .4;
+    --swiper-pagination-bottom: .5rem;
+}
+
+/********************* MAIN *********************/
+main {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/*************** MEDIA COLLECTION ***************/
+.podcasts,
+.books,
+.videos,
+.movies {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+
+    /* Appearance */
+    background-color: var(--bg-card-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-card-primary),
+        #000000 20%
+    );
+    border-radius: 1rem;
+}
+
+/* Hide highlighting when quickly clicking on slider arrows */
+.podcasts h2::selection,
+.books h2::selection,
+.videos h2::selection,
+.movies h2::selection,
+footer h2::selection {
+    background-color: transparent;
+}
+
+/***************** MEDIA SLIDER *****************/
+.media-slider {
+    /* Layout */
+    position: relative;
+    padding: 0 4rem 2rem;
+}
+
+.media-list {
+    /* Layout */
+    padding: 0;
+}
+
+.media-item {
+    /* Layout */
+    height: auto; /* Lets every slide stretch to the tallest one */
+    container-type: inline-size;
+
+    /* Appearance */
+    list-style: none;
+}
+
+.media-slider .swiper-button-prev,
+.media-slider .swiper-button-next {
+    /* Appearance */
+    scale: 1.5;
+    opacity: .5;
+    transition: opacity 0.2s ease, scale 0.15s ease;
+}
+
+.media-slider .swiper-button-prev {
+    /* Layout */
+    left: .5rem;
+}
+
+.media-slider .swiper-button-next {
+    /* Layout */
+    right: .5rem;
+}
+
+.media-slider .swiper-button-prev:hover,
+.media-slider .swiper-button-next:hover {
+    /* Appearance */
+    opacity: 1;
+}
+
+.media-slider .swiper-button-prev:active,
+.media-slider .swiper-button-next:active {
+    /* Appearance */
+    scale: 1.2;
+}
+
+/****************** MEDIA CARD ******************/
+.media-content {
+    /* Layout */
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 1rem;
+    gap: 1rem;
+
+    /* Appearance */
+    background-color: var(--bg-media-card);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-media-card),
+        #000000 20%
+    );
+    border-radius: 1rem;
+    user-select: none;
+}
+
+.media-image {
+    /* Layout */
+    display: block;
+    box-sizing: border-box;
+    max-width: 200px;
+    max-height: 200px;
+
+    /* Appearance */
+    object-fit: cover;
+    border-radius: .5rem;
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-media-card),
+        #000000 20%
+    );
+}
+
+/* Videos */
+.media-content iframe {
+    /* Layout */
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+
+    /* Appearance */
+    border-radius: .5rem;
+}
+
+.media-item-content {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    min-width: 0;
+    gap: .5rem;
+    contain: size; /* Height comes from the cover, not the text */
+    overflow: hidden;
+}
+
+.media-host,
+.media-creator {
+    /* Layout */
+    font-size: 80%;
+
+    /* Appearance */
+    font-weight: normal;
+    color: var(--text-secondary);
+}
+
+.media-description {
+    /* Layout */
+    max-height: 5lh;
+    min-height: 0; /* Shrinks and scrolls when the cover is short */
+    overflow-y: auto;
+    font-size: 80%;
+
+    /* Appearance */
+    scrollbar-color: var(--text-primary) transparent;
+}
+
+.media-triggers {
+    /* Layout */
+    font-size: 80%;
+}
+
+.media-triggers-suggest {
+    /* Layout */
+    width: fit-content;
+    font-size: 80%;
+
+    /* Appearance */
+    text-decoration: none;
+    opacity: .7;
+    transition: opacity 0.2s ease;
+}
+
+.media-triggers-suggest:hover {
+    /* Appearance */
+    opacity: 1;
+}
+
+/******************** MOBILE ********************/
+@media (max-width: 768px) {
+
+    /*************** MEDIA COLLECTION ***************/
+    .podcasts,
+    .books,
+    .videos,
+    .movies {
+        /* Layout */
+        padding: .5rem;
+        gap: .5rem;
+    }
+
+    /***************** MEDIA SLIDER *****************/
+    .media-slider {
+        /* Layout */
+        padding: 0 0 1.5rem;
+    }
+
+    .media-slider .swiper-button-prev,
+    .media-slider .swiper-button-next {
+        /* Layout */
+        display: none; /* swipe instead */
+    }
+
+    /****************** MEDIA CARD ******************/
+
+    .media-content {
+        /* Layout */
+        padding: .5rem;
+        gap: .5rem;
+    }
+
+    .media-image {
+        /* Layout */
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .media-description {
+        /* Layout */
+        max-height: 4lh;
+    }
+}

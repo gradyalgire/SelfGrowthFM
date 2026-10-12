@@ -1,0 +1,510 @@
+/*************** GLOBAL VARIABLES ***************/
+:root {
+    /*********** TEXT ***********/
+    --text-accent: #669276;
+    --text-vinyl: rgba(255, 255, 255, 0.18);
+
+    /******** BACKGROUND ********/
+    --bg-card-secondary: #ffffff;
+    --bg-vinyl-groove-dark: #111110;
+    --bg-vinyl-groove-light: #1e1e1b;
+    --bg-vinyl-label: var(--text-accent);
+    --bg-vinyl-hole: #000000;
+}
+
+/********************* MAIN *********************/
+main {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.home-eyebrow {
+    /* Layout */
+    font-size: 85%;
+
+    /* Appearance */
+    color: var(--text-secondary);
+    letter-spacing: .15em;
+}
+
+/********************* HERO *********************/
+.home-hero {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+    /* Rotating .vinyl's bounding box grows diagonally mid-spin, clip it so no horizontal scroll bar appears */
+    overflow-x: clip;
+}
+
+.home-hero-text {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 2rem;
+}
+
+.home-title {
+    /* Layout */
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.home-title em {
+    /* Appearance */
+    color: var(--text-accent);
+}
+
+.home-hero .home-eyebrow,
+.home-description {
+    /* Layout */
+    width: 50%;
+    font-size: clamp(.5rem, 2vw, 1rem);
+
+    /* Appearance */
+    color: var(--text-secondary);
+}
+
+.home-links {
+    /* Layout */
+    display: flex;
+    gap: .5rem;
+}
+
+.home-link {
+    /* Layout */
+    padding: .3rem 1rem;
+    font-size: clamp(.5rem, 2vw, 1rem);
+
+    /* Appearance */
+    text-decoration: none;
+    background-color: var(--bg-card-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-card-primary),
+        #000000 20%
+    );
+    border-radius: .5rem;
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.home-link.primary {
+    /* Appearance */
+    background-color: var(--bg-button-active);
+    border-color: color-mix(
+        in srgb,
+        var(--bg-button-active),
+        #000000 20%
+    );
+}
+
+.home-link:hover {
+    /* Appearance */
+    transform: translateY(-2px);
+    background-color: var(--bg-button-hover);
+}
+
+/********************* VINYL ********************/
+.vinyl {
+    /* Layout */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(250px, 40vw, 700px);
+    aspect-ratio: 1 / 1;
+    flex-shrink: 1;
+
+    /* Appearance */
+    background: repeating-radial-gradient(
+        circle at center,
+        var(--bg-vinyl-groove-dark) 0%,
+        var(--bg-vinyl-groove-light) 5%
+    );
+    border-radius: 50%;
+    animation: spin 20s linear infinite;
+}
+
+.vinyl-word {
+    /* Layout */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.vinyl-word text {
+    /* Layout */
+    font-size: 10px;
+
+    /* Appearance */
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: .2em;
+    fill: var(--text-vinyl);
+}
+
+.vinyl-center {
+    /* Layout */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+    aspect-ratio: 1 / 1;
+    padding: 3%;
+
+    /* Appearance */
+    background-color: var(--bg-vinyl-label);
+    border-radius: 50%;
+}
+
+.vinyl-dot {
+    /* Layout */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    aspect-ratio: 1 / 1;
+
+    /* Appearance */
+    background-color: var(--bg-vinyl-hole);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.vinyl-title {
+    /* Layout */
+    font-size: clamp(.6rem, 1.2vw, 1rem);
+}
+
+.vinyl-description {
+    /* Layout */
+    font-size: clamp(.35rem, .8vw, .65rem);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vinyl {
+        /* Appearance */
+        animation: none;
+    }
+}
+
+/******************** PURPOSE *******************/
+.home-purpose {
+    /* Layout */
+    display: flex;
+    gap: 2rem;
+}
+
+.home-purpose-text {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 1rem;
+    line-height: 1.6;
+}
+
+.home-purpose-quote {
+    /* Layout */
+    margin: 0;
+    padding: .5rem 1rem;
+    font-size: 115%;
+
+    /* Appearance */
+    font-style: italic;
+    border-left: 4px solid var(--bg-header);
+}
+
+.home-purpose-points {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1.5rem;
+    gap: 1.5rem;
+
+    /* Appearance */
+    list-style: none;
+    background-color: var(--bg-card-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-card-primary),
+        #000000 20%
+    );
+    border-radius: 1rem;
+}
+
+.home-purpose-points li {
+    /* Layout */
+    display: flex;
+    gap: 1rem;
+    line-height: 1.5;
+}
+
+.home-purpose-points i {
+    /* Layout */
+    flex-shrink: 0;
+    width: 1.5rem;
+    padding-top: .2rem;
+    font-size: 125%;
+    text-align: center;
+
+    /* Appearance */
+    color: var(--text-accent);
+}
+
+.home-purpose-points h3 {
+    /* Layout */
+    margin-bottom: .25rem;
+    font-size: 100%;
+}
+
+/********************* GUIDE ********************/
+.home-guide {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.home-guide-intro {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.home-guide-cards {
+    /* Layout */
+    display: flex;
+    gap: 1.5rem;
+}
+
+.home-guide-card {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+    gap: 1rem;
+    line-height: 1.5;
+
+    /* Appearance */
+    background-color: var(--bg-card-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-card-primary),
+        #000000 20%
+    );
+    border-radius: 1rem;
+}
+
+.home-guide-header {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.home-guide-header i {
+    /* Layout */
+    padding: .6rem;
+    font-size: 125%;
+
+    /* Appearance */
+    background-color: var(--bg-button);
+    border-radius: .6rem;
+}
+
+.home-guide-card ul {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+    gap: .6rem;
+
+    /* Appearance */
+    list-style: none;
+}
+
+.home-guide-card li {
+    /* Layout */
+    display: flex;
+    gap: .6rem;
+}
+
+.home-guide-card li i {
+    /* Layout */
+    flex-shrink: 0;
+    width: 1rem;
+    padding-top: .25rem;
+    text-align: center;
+
+    /* Appearance */
+    color: var(--text-accent);
+}
+
+.home-guide-link {
+    /* Layout */
+    width: fit-content;
+
+    /* Appearance */
+    font-weight: bold;
+    text-decoration: none;
+    opacity: .8;
+    transition: opacity 0.2s ease;
+}
+
+.home-guide-link:hover {
+    /* Appearance */
+    opacity: 1;
+}
+
+.home-guide-shortcuts {
+    /* Layout */
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.home-guide-shortcuts a {
+    /* Layout */
+    padding: .4rem .9rem;
+
+    /* Appearance */
+    text-decoration: none;
+    background-color: var(--bg-button);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-button),
+        #000000 20%
+    );
+    border-radius: .5rem;
+    transition: background-color 0.2s ease;
+}
+
+.home-guide-shortcuts a:hover {
+    /* Appearance */
+    background-color: var(--bg-button-hover);
+}
+
+.home-guide-tip {
+    /* Layout */
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    line-height: 1.5;
+
+    /* Appearance */
+    background-color: var(--bg-card-secondary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-card-primary),
+        #000000 20%
+    );
+    border-left: 4px solid var(--bg-header);
+    border-radius: .5rem;
+}
+
+.home-guide-tip i {
+    /* Layout */
+    padding-top: .15rem;
+    font-size: 125%;
+
+    /* Appearance */
+    color: var(--text-accent);
+}
+
+/******************** MOBILE ********************/
+@media (max-width: 1020px) {
+
+    /********************* MAIN *********************/
+    main {
+        /* Layout */
+        gap: 2rem;
+    }
+
+    /********************* HERO *********************/
+    .home-hero {
+        /* Layout */
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .home-hero-text {
+        /* Layout */
+        width: 100%;
+        align-items: center;
+    }
+
+    .home-links {
+        /* Layout */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /********************* VINYL ********************/
+    .vinyl {
+        /* Layout */
+        width: clamp(220px, 75vw, 400px);
+    }
+
+    /******************** PURPOSE *******************/
+    .home-purpose {
+        /* Layout */
+        flex-direction: column;
+    }
+
+    .home-purpose-text,
+    .home-purpose-points {
+        /* Layout */
+        width: auto;
+    }
+
+    /********************* GUIDE ********************/
+    .home-guide-cards {
+        /* Layout */
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /******************** PURPOSE *******************/
+    .home-purpose-points {
+        /* Layout */
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /********************* GUIDE ********************/
+    .home-guide-card {
+        /* Layout */
+        padding: 1rem;
+    }
+}
