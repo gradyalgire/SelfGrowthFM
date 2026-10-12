@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfGrowth FM · Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/index.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="/index.html">SelfGrowth FM</a></h1>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/playlist/index.html">Playlist</a>
+            <a href="/media/index.html" class="active">Media</a>
+            <a href="/recommendations/index.html">Recommendations</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Media Collection</h2>
+        <p>
+            This page is a collection of media meant to help you grow. Everything here (podcasts, books, videos, and
+            movies) is focused on building better habits, having a stronger mindset, and long-term self-improvement.
+        </p>
+        <p>
+            You don't need to consume it all. Use this page as a resource, not a checklist. Explore what resonates
+            with you, apply what's useful, and move forward at your own pace.
+        </p>
+        <section class="podcasts">
+            <h2>Podcasts</h2>
+            <div class="media-slider">
+                <div class="swiper">
+                    <ul id="podcasts" class="media-list swiper-wrapper">
+                        <li class="media-item swiper-slide">Loading...</li>
+                    </ul>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section class="books">
+            <h2>Books</h2>
+            <div class="media-slider">
+                <div class="swiper">
+                    <ul id="books" class="media-list swiper-wrapper">
+                        <li class="media-item swiper-slide">Loading...</li>
+                    </ul>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section class="videos">
+            <h2>Videos</h2>
+            <div class="media-slider">
+                <div class="swiper">
+                    <ul id="videos" class="media-list swiper-wrapper">
+                        <li class="media-item swiper-slide">Loading...</li>
+                    </ul>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section class="movies">
+            <h2>Movies</h2>
+            <div class="media-slider">
+                <div class="swiper">
+                    <ul id="movies" class="media-list swiper-wrapper">
+                        <li class="media-item swiper-slide">Loading...</li>
+                    </ul>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="/media/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="/assets/footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,390 @@
+@import url("../main.css");
+
+/*************** GLOBAL VARIABLES ***************/
+:root {
+    /******** BACKGROUND ********/
+    --bg-form-input: #ffffff;
+    --bg-example-great: #eef4e8;
+    --bg-example-good: #efefe4;
+    --bg-example-weak: #f1eee7;
+
+    /********** BORDER **********/
+    --border-example-great: #3f6638;
+    --border-example-good: #a58b59;
+    --border-example-weak: #a56259;
+    --border-focus: var(--bg-header);
+}
+
+/**************** RECOMMENDATIONS ***************/
+.recommendations {
+    /* Layout */
+    display: flex;
+    gap: 2rem;
+}
+
+.recommendations-info,
+.recommendations-form {
+    /* Layout */
+    width: 50%;
+}
+
+/************** RECOMMENDATIONS INFO ************/
+.recommendations-info {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.recommendations-hero {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.recommendations-info-card {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: .75rem;
+
+    /* Appearance */
+    background-color: var(--bg-card-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-card-primary),
+        #000000 20%
+    );
+    border-radius: 1rem;
+}
+
+.recommendations-info-card h2 {
+    /* Layout */
+    font-size: 115%;
+}
+
+.recommendations-info-card h3 {
+    /* Layout */
+    margin-bottom: .25rem;
+    font-size: 95%;
+}
+
+.recommendations-info-card p {
+    /* Layout */
+    line-height: 1.4;
+}
+
+.recommendations-info-card ul {
+    /* Layout */
+    padding-left: 1.25rem;
+}
+
+.recommendations-info-card li {
+    /* Layout */
+    margin-bottom: .45rem;
+    line-height: 1.35;
+}
+
+.recommendations-checklist {
+    /* Layout */
+    padding-left: 0 !important;
+
+    /* Appearance */
+    list-style: none;
+}
+
+.recommendations-checklist li::before {
+    /* Appearance */
+    content: "✓ ";
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+/************ SUBMISSION EXAMPLES ************/
+.recommendations-example {
+    /* Layout */
+    padding: .65rem;
+
+    /* Appearance */
+    border-radius: .5rem;
+}
+
+.recommendations-example.great {
+    /* Appearance */
+    background-color: var(--bg-example-great);
+    border-left: 4px solid var(--border-example-great);
+}
+
+.recommendations-example.good {
+    /* Appearance */
+    background-color: var(--bg-example-good);
+    border-left: 4px solid var(--border-example-good);
+}
+
+.recommendations-example.weak {
+    /* Appearance */
+    background-color: var(--bg-example-weak);
+    border-left: 4px solid var(--border-example-weak);
+}
+
+/************* RECOMMENDATION OPTIONS ***********/
+.recommendation-options {
+    /* Layout */
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem 0 1rem;
+    gap: .5rem;
+}
+
+.recommendation-option {
+    /* Layout */
+    padding: .5rem 1rem;
+
+    /* Appearance */
+    font-family: var(--font-body);
+    background-color: var(--bg-button);
+    color: var(--text-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-button),
+        #000000 20%
+    );
+    border-radius: .5rem;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.recommendation-option:hover {
+    /* Appearance */
+    background-color: var(--bg-button-hover);
+}
+
+.recommendation-option.active {
+    /* Appearance */
+    background-color: var(--bg-button-active);
+}
+
+/************** RECOMMENDATION FORM *************/
+.recommendation-form fieldset {
+    /* Layout */
+    margin: 0;
+    padding: 1.75rem 2rem;
+
+    /* Appearance */
+    background-color: var(--bg-card-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-card-primary),
+        #000000 20%
+    );
+    border-radius: 1rem;
+}
+
+.recommendation-form legend {
+    /* Layout */
+    padding: .5rem 1rem;
+    font-size: 150%;
+
+    /* Appearance */
+    font-weight: bold;
+    background-color: var(--bg-form-input);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-form-input),
+        #000000 20%
+    );
+    border-radius: .5rem;
+}
+
+.recommendation-form-group {
+    /* Layout */
+    margin-bottom: 1.25rem;
+}
+
+.recommendation-form-group label {
+    /* Layout */
+    display: block;
+    margin-bottom: .35rem;
+    font-size: 95%;
+}
+
+.recommendation-form-note {
+    /* Layout */
+    margin-bottom: .4rem;
+    font-size: 80%;
+    line-height: 1.4;
+
+    /* Appearance */
+    color: var(--text-secondary);
+}
+
+.field-optional {
+    /* Appearance */
+    color: var(--text-secondary);
+}
+
+.recommendation-form input[type="text"],
+.recommendation-form input[type="email"],
+.recommendation-form input[type="url"],
+.recommendation-form select,
+.recommendation-form textarea {
+    /* Layout */
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: .5rem 1rem;
+
+    /* Appearance */
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background-color: var(--bg-form-input);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-form-input),
+        #000000 20%
+    );
+    border-radius: .5rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommendation-form textarea {
+    /* Layout */
+    line-height: 1.5;
+
+    /* Appearance */
+    resize: vertical;
+}
+
+.recommendation-form input:focus,
+.recommendation-form select:focus,
+.recommendation-form textarea:focus {
+    /* Appearance */
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px color-mix(
+        in srgb,
+        var(--border-focus),
+        transparent 80%
+    );
+}
+
+.checkbox {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.checkbox label {
+    /* Layout */
+    margin: 0;
+}
+
+.form-divider {
+    /* Layout */
+    margin: 1.5rem 0;
+
+    /* Appearance */
+    border: none;
+    border-top: 1px solid var(--divider-primary);
+}
+
+.recommendation-form-submit {
+    /* Layout */
+    margin-bottom: .5rem;
+    padding: .65rem 1.5rem;
+    font-size: 95%;
+
+    /* Appearance */
+    font-family: var(--font-body);
+    font-weight: bold;
+    background-color: var(--bg-button-active);
+    color: var(--text-primary);
+    border: 1px solid color-mix(
+        in srgb,
+        var(--bg-button-active),
+        #000000 20%
+    );
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, scale 0.15s ease;
+}
+
+.recommendation-form-submit:hover {
+    /* Appearance */
+    background-color: color-mix(
+        in srgb,
+        var(--bg-button-active),
+        #000000 10%
+    );
+}
+
+.recommendation-form-submit:active {
+    /* Appearance */
+    scale: .98;
+}
+
+/******************** TABLET ********************/
+@media (max-width: 1020px) {
+
+    /**************** RECOMMENDATIONS ***************/
+    .recommendations {
+        /* Layout */
+        flex-direction: column;
+    }
+
+    .recommendations-info,
+    .recommendations-form {
+        /* Layout */
+        width: 100%;
+    }
+
+    /************** RECOMMENDATIONS INFO ************/
+    .recommendations-info {
+        /* Layout */
+        gap: 1rem;
+    }
+}
+
+/******************** MOBILE ********************/
+@media (max-width: 768px) {
+
+    /**************** RECOMMENDATIONS ***************/
+    .recommendations {
+        /* Layout */
+        gap: 2rem;
+    }
+
+    /************** RECOMMENDATIONS INFO ************/
+    .recommendations-info-card {
+        /* Layout */
+        padding: .5rem;
+        gap: .5rem;
+    }
+
+    /************* RECOMMENDATION OPTIONS ***********/
+    .recommendation-option {
+        /* Layout */
+        padding: .2rem .5rem;
+        font-size: 65%;
+
+        /* Appearance */
+        border-radius: .3rem;
+    }
+
+    /************** RECOMMENDATION FORM *************/
+    .recommendation-form fieldset {
+        /* Layout */
+        padding: 1rem;
+    }
+
+    .recommendation-form legend {
+        /* Layout */
+        font-size: 125%;
+    }
+}

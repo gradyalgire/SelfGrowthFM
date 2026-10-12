@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfGrowth FM · Home</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="/index.html">SelfGrowth FM</a></h1>
+        <nav>
+            <a href="/index.html" class="active">Home</a>
+            <a href="/playlist/index.html">Playlist</a>
+            <a href="/media/index.html">Media</a>
+            <a href="/recommendations/index.html">Recommendations</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="home-hero">
+            <div class="home-hero-text">
+                <p class="home-eyebrow">SELF - GROWTH</p>
+                <h2 class="home-title">
+                    Music that helps you<br>
+                    <em>move forward.</em>
+                </h2>
+                <p class="home-description">
+                    Songs and media, hand-picked for anyone doing the slow, honest work of rebuilding themselves.
+                </p>
+                <div class="home-links">
+                    <a href="/playlist/index.html" class="home-link primary">EXPLORE THE PLAYLIST</a>
+                    <a href="/media/index.html" class="home-link">BROWSE MEDIA</a>
+                </div>
+            </div>
+            <div class="vinyl" aria-hidden="true">
+                <svg class="vinyl-word" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+
+                        <!--
+                        VINYL RECORD TEXT RINGS
+                        ========================
+                        This SVG sits inside .vinyl and spins with it automatically.
+
+                        HOW TO ADJUST RINGS:
+                        - The viewBox is "0 0 500 500", so the center is always 250,250
+                        - Each ring is defined by its radius (e.g. 200 for outer, 94 for inner)
+                        - To move a ring outward: increase the radius (max ~240 before hitting the edge)
+                        - To move a ring inward: decrease the radius (min ~100 before hitting the label)
+                        - To add a new ring: copy a <defs> path and <text> block, give it a new id, and set a new radius
+
+                        HOW TO ADJUST TEXT:
+                        - Edit the text content inside <textPath> to change words
+                        - Use · as a separator between words so the loop looks intentional
+                        - startOffset shifts where the text starts on the circle (0% = left edge, 25% = top, 50% = right edge)
+                        - font-size, letter-spacing, and fill are controlled in index.css under .vinyl-word text
+
+                        HOW THE PATH WORKS:
+                        - "M 250,250" moves to center
+                        - "m -RADIUS,0" shifts left to the starting point of the circle
+                        - "a RADIUS,RADIUS 0 1,1 DIAMETER,0" draws the top half arc (DIAMETER = RADIUS * 2)
+                        - "a RADIUS,RADIUS 0 1,1 -DIAMETER,0" draws the bottom half arc back
+                        - Two arcs are used because SVG cannot draw a full 360° circle in one arc command
+                        -->
+
+                        <!-- inner ring 1 -->
+                        <path id="ring-inner" d="M 250,250 m -94,0 a 94,94 0 1,1 188,0 a 94,94 0 1,1 -188,0" />
+                        <!-- middle ring 2 -->
+                        <path id="ring-middle" d="M 250,250 m -147,0 a 147,147 0 1,1 294,0 a 147,147 0 1,1 -294,0" />
+                        <!-- outer ring 3 -->
+                        <path id="ring-outer" d="M 250,250 m -200,0 a 200,200 0 1,1 400,0 a 200,200 0 1,1 -400,0" />
+                    </defs>
+
+                    <!-- inner ring text -->
+                    <text>
+                        <textPath href="#ring-inner" startOffset="0%">
+                            TRANSFORMATION · PEACE · HABIT · EXCELLENCE · WISDOM · HEALING · SELF-WORTH ·
+                        </textPath>
+                    </text>
+
+                    <!-- middle ring text -->
+                    <text>
+                        <textPath href="#ring-middle" startOffset="0%">
+                            ADAPTABILITY · PROGRESS · COMMITMENT · CLARITY · REFLECTION · PERSISTENCE · GRATITUDE ·
+                            BALANCE · AMBITIONS · STRENGTH ·
+                        </textPath>
+                    </text>
+
+                    <!-- outer ring text -->
+                    <text>
+                        <textPath href="#ring-outer" startOffset="0%">
+                            ACTION · MINDSET · CONFIDENT · ACCOUNTABILITY · INTEGRITY · PATIENCE · COURAGE · PURPOSE
+                            · FOCUS · RESILIENCE · CONSISTENCY · GROWTH · DISCIPLINE · SELF-IMPROVEMENT ·
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="vinyl-center">
+                    <p class="vinyl-title">SELF</p>
+                    <span class="vinyl-dot"></span>
+                    <p class="vinyl-description">THROUGH MUSIC</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-purpose">
+            <div class="home-purpose-text">
+                <p class="home-eyebrow">PURPOSE</p>
+                <h2>Why this exists</h2>
+                <p>
+                    When life gets hard, the music you reach for can keep you stuck or help you move. It's easy to put on the songs that keep the wound open.
+                </p>
+                <p>
+                    SelfGrowth FM is the alternative: songs and media chosen because they lean toward
+                    responsibility, stability, and forward motion. It's built from personal experience, not trends or streaming numbers.
+                </p>
+                <blockquote class="home-purpose-quote">
+                    The goal isn't to feel better. It's to become better, and eventually, feeling better follows.
+                </blockquote>
+            </div>
+            <ul class="home-purpose-points">
+                <li>
+                    <i class="fa fa-hand-paper-o"></i>
+                    <div>
+                        <h3>Picked by hand</h3>
+                        <p>Every song and piece of media is reviewed manually. Nothing is added by an algorithm.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-commenting-o"></i>
+                    <div>
+                        <h3>Every entry explains itself</h3>
+                        <p>Each one has a description of why it's here, so you know what it's meant to help with before you press play.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <div>
+                        <h3>Trigger warnings up front</h3>
+                        <p>Heavy topics are listed on each card, so you can skip what you're not ready for.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-users"></i>
+                    <div>
+                        <h3>Shaped by the people using it</h3>
+                        <p>Anyone can suggest additions. Each suggestion is reviewed before it's added.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="home-guide">
+            <div class="home-guide-intro">
+                <p class="home-eyebrow">HOW IT WORKS</p>
+                <h2>Using the site</h2>
+                <p>Three pages, each with a different job. Here's what you can do on each one.</p>
+            </div>
+            <div class="home-guide-cards">
+                <article class="home-guide-card">
+                    <div class="home-guide-header">
+                        <i class="fa fa-music"></i>
+                        <h3>Playlist</h3>
+                    </div>
+                    <p>The full song list, with a Spotify player at the top so you can listen while you browse.</p>
+                    <ul>
+                        <li><i class="fa fa-search"></i> Search by song number, title, artist, or description</li>
+                        <li><i class="fa fa-filter"></i> Filter by genre to see songs in any genre you pick, or by category to see songs that match every category you pick</li>
+                        <li><i class="fa fa-spotify"></i> Click a cover to open the song in Spotify</li>
+                        <li><i class="fa fa-file-text-o"></i> Open the lyrics from any song card</li>
+                    </ul>
+                    <a href="/playlist/index.html" class="home-guide-link">Open the playlist <i class="fa fa-arrow-right"></i></a>
+                </article>
+
+                <article class="home-guide-card">
+                    <div class="home-guide-header">
+                        <i class="fa fa-book"></i>
+                        <h3>Media</h3>
+                    </div>
+                    <p>Podcasts, books, videos, and movies, each on its own shelf. Use it as a resource, not a checklist.</p>
+                    <ul>
+                        <li><i class="fa fa-arrows-h"></i> Swipe or use the arrows to move through each shelf</li>
+                        <li><i class="fa fa-external-link"></i> Click a cover to open it at the source</li>
+                        <li><i class="fa fa-youtube-play"></i> Watch videos right on the page</li>
+                    </ul>
+                    <a href="/media/index.html" class="home-guide-link">Browse media <i class="fa fa-arrow-right"></i></a>
+                </article>
+
+                <article class="home-guide-card">
+                    <div class="home-guide-header">
+                        <i class="fa fa-paper-plane"></i>
+                        <h3>Recommendations</h3>
+                    </div>
+                    <p>Suggest something that helped you, or flag a trigger warning that's missing.</p>
+                    <ul>
+                        <li><i class="fa fa-hand-pointer-o"></i> Pick what you're suggesting: a song, media, a trigger, or something else</li>
+                        <li><i class="fa fa-pencil"></i> Explain specifically how it helped you. "I like this song" won't get it added.</li>
+                        <li><i class="fa fa-envelope-o"></i> Leave your email so you can get a follow-up</li>
+                    </ul>
+                    <div class="home-guide-shortcuts">
+                        <a href="/recommendations/?type=song">Song</a>
+                        <a href="/recommendations/?type=media">Media</a>
+                        <a href="/recommendations/?type=trigger">Trigger</a>
+                        <a href="/recommendations/?type=other">Other</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="home-guide-tip">
+                <i class="fa fa-lightbulb-o"></i>
+                <p>
+                    <strong>Missing a trigger warning?</strong> Any song or media card without triggers has a
+                    <em>Suggest Triggers</em> link or a <em>+</em> icon. It opens the recommendation form with that title already filled in.
+                </p>
+            </div>
+        </section>
+
+        <p class="note">
+            This project is <strong>not</strong> therapy and it is <strong>not</strong> a replacement for professional
+            help. It is a personal, experience-based resource created to support intentional growth. If you are in
+            crisis or need immediate help, support resources are listed below.
+        </p>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="/assets/footer.js"></script>
+</body>
+
+</html>
