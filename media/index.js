@@ -114,7 +114,16 @@ function generateMediaSliderCard(mediatype, media) {
                         <h4 class="media-host">${sanitize(m.creator)}</h4>
                     </div>
                     <p class="media-description">${sanitize(m.description)}</p>
-                    ${m.triggers?.length ? `<p class="media-triggers"><strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}</p>` : `<a href="/recommendations/?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
+
+                    ${m.triggers?.length ? 
+                    `<p class="media-triggers">
+                        <strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}
+                        <a href="/recommendations/?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-add">
+                            <i class="fa fa-plus" title="Add Trigger"></i>
+                        </a>
+                    </p>`
+                    : 
+                    `<a href="/recommendations/?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
                 </div>
             </div>
         </li>

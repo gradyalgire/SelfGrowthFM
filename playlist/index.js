@@ -67,7 +67,17 @@ function renderSongs(songsToRender) {
                     <h4 class="song-artist">${sanitize(s.artist)}</h4>
                 </div>
                 <p class="song-description">${sanitize(s.description)}</p>
-                ${s.triggers?.length ? `<p class="song-triggers"><strong>Triggers:</strong> ${sanitize(s.triggers.join(', '))}</p>` : `<a href="/recommendations/?type=trigger&title=${encodeURIComponent(s.title)}&artist=${encodeURIComponent(s.artist)}" class="song-triggers-suggest">Suggest Triggers</a>`}
+
+                ${s.triggers?.length ? 
+                `<p class="song-triggers">
+                    <strong>Triggers:</strong> ${sanitize(s.triggers.join(', '))}
+                    <a href="/recommendations/?type=trigger&title=${encodeURIComponent(s.title)}&artist=${encodeURIComponent(s.artist)}" class="song-triggers-add">
+                        <i class="fa fa-plus" title="Add Trigger"></i>
+                    </a>
+                </p>`
+                : 
+                `<a href="/recommendations/?type=trigger&title=${encodeURIComponent(s.title)}&artist=${encodeURIComponent(s.artist)}" class="song-triggers-suggest">Suggest Triggers</a>`}
+
                 <a class="song-lyrics" href="${safeUrl(s.lyrics_url)}" target="_blank">View Lyrics</a>
             </div>
         </div>

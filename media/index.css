@@ -190,7 +190,8 @@ footer h2::selection {
     font-size: 80%;
 }
 
-.media-triggers-suggest {
+.media-triggers-suggest,
+.media-triggers-add {
     /* Layout */
     width: fit-content;
     font-size: 80%;
@@ -201,7 +202,13 @@ footer h2::selection {
     transition: opacity 0.2s ease;
 }
 
-.media-triggers-suggest:hover {
+.media-triggers-add {
+    /* Layout */
+    padding-left: .3rem;
+}
+
+.media-triggers-suggest:hover,
+.media-triggers-add:hover {
     /* Appearance */
     opacity: 1;
 }

@@ -222,6 +222,7 @@ main {
 }
 
 .song-triggers-suggest, 
+.song-triggers-add,
 .song-lyrics {
     /* Layout */
     width: fit-content;
@@ -231,7 +232,13 @@ main {
     opacity: .7;
 }
 
+.song-triggers-add {
+    /* Layout */
+    padding-left: .3rem;
+}
+
 .song-triggers-suggest:hover,
+.song-triggers-add:hover,
 .song-lyrics:hover {
     /* Appearance */
     opacity: 1;
